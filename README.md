@@ -9,7 +9,7 @@ In Cocktail Conundrom, users will be able to:
 * Each cocktail name will connect to it's respective ingredients
 * Each ingredient will connect to the cocktail's that include it as an element
 ### Wireframes
-[![](https://wireframe.cc/EJut7r)]
+![](Screen Shot 2019-10-15 at 8.39.58 AM.png)
 ### Architecture and Technologies
 This project will be implemented with the following technologies:
 * Vanilla JavaScript
