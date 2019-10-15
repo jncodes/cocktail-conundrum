@@ -1,0 +1,47 @@
+{
+  "name": "cocktail-conundrum",
+  "version": "1.0.0",
+  "description": "An interactive tool to visualize the world's best known cocktails.  [Check it out here!](#) ### Background and Overview Cocktail Conundrum is a visualized bartending guide for the novice or professional bartender.  Displayed as a tree structure, users can browse the world's best known cocktails by name or ingredient (alcohol and mix-ins).  This is a tool that can be used to jog the memory or discover something new. ### Functionality & MVP In Cocktail Conundrom, users will be able to: * Select to search by name or ingredient * Hovering over a cocktail name will display the recipe instructions for concoction * Each cocktail name will connect to it's respective ingredients * Each ingredient will connect to the cocktail's that include it as an element ### Wireframes ![](https://github.com/jncodes/cocktail-conundrum/blob/master/Screen%20Shot%202019-10-15%20at%208.39.58%20AM.png) ### Architecture and Technologies This project will be implemented with the following technologies: * Vanilla JavaScript * [D3.js JavaScript Library](https://d3js.org) * [The Cocktail DB API](https://www.thecocktaildb.com) * HTML * SVG * CSS * Canvas * Webpack ### Implementation Timeline * Day 1 - Source database / API and corresponding documentation * Day 2 - Parse data into appropriate organization, review D3 documentation and tutorials for best implementation * Day 3 - Begin code layout, create node modules and entry file * Day 4 - Implement data visualization * Day 5 - Complete styling and animation effects ### Bonus features Future direction: * Add the following filters:     * Glass (ex. Wine glass, Shot glass, Martini glass, etc.. )     * Category (ex. Shake, Shot, Punch, etc.. )     * Alcoholic vs Non-alcoholic",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "webpack:watch": "webpack --watch --config webpack.dev.js",
+    "webpack:build": "webpack --config webpack.prod.js  --optimize-minimize"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jncodes/cocktail-conundrum.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jncodes/cocktail-conundrum/issues"
+  },
+  "homepage": "https://github.com/jncodes/cocktail-conundrum#readme",
+  "dependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "autoprefixer": "^9.6.5",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "fibers": "^4.0.1",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.12.0",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.23.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2",
+    "webpack-merge": "^4.2.2"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ]
+}
