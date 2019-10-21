@@ -7,7 +7,7 @@ const ingredients = () => {
             .then(response => response.json())
             .then(data => {
                 const ingredient = data.ingredients[0];
-                state['ingredients'][ingredient.strIngredient] = ingredient;
+                state['ingredients'][ingredient.strIngredient.toUpperCase()] = ingredient;
                 ingredients_list.push(ingredient.strIngredient);
             })
             .catch(() => { });

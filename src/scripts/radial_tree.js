@@ -1,4 +1,12 @@
-// import display from "./information";
+import display from "./information";
+
+// const capitalize = string => {
+//     const words = string.split(' ');
+//     let cap_words = words.map(word => {
+//         return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+//     });
+//     return cap_words.join(' ');
+// };
 
 const draw = () => {
 
@@ -14,34 +22,18 @@ const draw = () => {
         .attr('height', height)
         .append('g')
         .attr('transform', 'translate(' + radius + ', ' + radius + ')');
-    // .attr('transform', 'translate(50, 50)');
 
     const dataStructure = d3.stratify()
-        .id(function (d) {
-            // debugger
-            console.log(d);
-            return d.child;
-        })
+        // .id(function (d) { return capitalize(d.child); })
+        // .parentId(function (d) { return capitalize(d.parent); })
+        .id(function (d) { return d.child; })
         .parentId(function (d) { return d.parent; })
-        (window.tree_data); // check if state alone will work - believe it will
-
-    // dataStructure.each(function (d) {
-    //     d.name = d.data.child;
-    // });
+        (window.tree_data);
 
     const treeStructure = d3.cluster()
         .size([360, radius - 60]);
-    // const treeStructure = d3.tree().size([500, 300]);
-
-    console.log(dataStructure);
-    console.log(treeStructure);
-
-    // debugger
 
     const information = treeStructure(dataStructure);
-
-    console.log(information.descendants());
-    console.log(information.links());
 
     const linksGenerator = d3.linkRadial()
         .angle(function (d) { return d.x / 180 * Math.PI; })
@@ -64,19 +56,12 @@ const draw = () => {
         })
 
     nodes.append('image')
-        .attr('href', function (d) {
-            // debugger
-            return d.data.image;
-        })
+        .attr('href', function (d) { return d.data.image; })
         .attr("x", "-12px")
         .attr("y", "-12px")
         .attr("width", "24px")
-        .attr("height", "24px");
-        // .on('click', function (d) {
-        //     debugger
-        //     // d3.select('#information-box')
-        //     display(d);
-        // });
+        .attr("height", "24px")
+        .on('click', function (d) { return display(d); });
     // debugger
     // nodes.append("circle")
     // .attr("r", 7)
