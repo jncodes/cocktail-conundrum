@@ -5,12 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./dist/main.css">
+
+    <link rel="stylesheet" href="./src/styles/main-page.css">
+    <link rel="stylesheet" href="./src/styles/search.css">
+    <link rel="stylesheet" href="./src/styles/information.css">
+
     <title>Cocktail Conundrum</title>
 </head>
 <body>
 
-    <input type="text" id="cocktail_name">
-    <div id="app"></div>
+    <div class=tree id="app"></div>
+
+    <div class="side-bar">
+
+        <div class='search-box-container'>
+            <input class='search-box' type="text" id="ingredient">
+        </div>
+
+        <div class="information-box-container">
+            <div class="information-box"></div>
+        </div>
+
+    </div>
+
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="./dist/main.js"></script>
 

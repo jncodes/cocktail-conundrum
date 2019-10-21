@@ -1,9 +1,14 @@
+// import display from "./information";
+
 const draw = () => {
-    const width = 600;
-    const height = 600;
+
+    const width = 975;
+    const height = 975;
     const radius = width / 2;
 
-    const svg = d3.select('body')
+    d3.select('svg').remove()
+
+    const svg = d3.select('#app')
         .append('svg')
         .attr('width', width)
         .attr('height', height)
@@ -20,9 +25,9 @@ const draw = () => {
         .parentId(function (d) { return d.parent; })
         (window.tree_data); // check if state alone will work - believe it will
 
-    dataStructure.each(function (d) {
-        d.name = d.data.child;
-    });
+    // dataStructure.each(function (d) {
+    //     d.name = d.data.child;
+    // });
 
     const treeStructure = d3.cluster()
         .size([360, radius - 60]);
@@ -67,6 +72,11 @@ const draw = () => {
         .attr("y", "-12px")
         .attr("width", "24px")
         .attr("height", "24px");
+        // .on('click', function (d) {
+        //     debugger
+        //     // d3.select('#information-box')
+        //     display(d);
+        // });
     // debugger
     // nodes.append("circle")
     // .attr("r", 7)
@@ -119,6 +129,13 @@ const draw = () => {
     // const treeStructure = d3.tree().size([500, 300]);
     // const information = treeStructure(dataStructure);
 
+    // const autoBox = () => {
+    //     const { x, y, width, height } = this.getBBox();
+    //     return [x, y, width, height];
+    // }
+
+    // svg.attr("viewBox", autoBox);
+    
     // const circles = svg.append('g')
     //     .selectAll('circle')
     //     .data(information.descendants());
@@ -128,7 +145,5 @@ const draw = () => {
     //     .attr('cy', function (d) { return d.y; })
     //     .attr('r', 5);
 };
-
-window.draw = draw;
 
 export default draw;

@@ -1,0 +1,42 @@
+body {
+    /* background-color: darkgreen; */
+
+    display: flex;
+
+    height: 100%;
+}
+
+.tree {
+    /* background-color: aquamarine; */
+
+    width: 70%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+svg {
+    /* background-color: blue; */
+}
+
+.side-bar {
+    /* background-color: pink; */
+
+    width: 30%; /**/
+    height: 800px;
+}
+
+.search-box-container {
+    /* background-color: blueviolet; */
+
+    height: 100px;
+    width: 100%; /**/
+}
+
+.information-box-container {
+    /* background-color: crimson; */
+
+    height: 100%;
+    width: 100%; /**/
+}
