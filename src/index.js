@@ -3,7 +3,6 @@ import './styles/index.scss';
 import search from './scripts/search';
 import ingredients from './scripts/ingredients';
 import autocomplete from './scripts/autocomplete';
-// import display from './scripts/information';
 
 document.addEventListener('DOMContentLoaded', () => { 
 
@@ -22,7 +21,5 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         }
     })
-
-    // display();
 
 });

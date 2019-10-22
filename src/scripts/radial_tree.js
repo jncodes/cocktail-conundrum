@@ -1,13 +1,11 @@
 import display from "./information";
 
 function autoBox() {
-        debugger
         const { x, y, width, height } = this.getBBox();
         return [x, y, width, height];
     }
 
 const draw = () => {
-    debugger
     const width = 975;
     const height = 975;
     const radius = width / 2;
@@ -58,6 +56,13 @@ const draw = () => {
         .attr("y", "-12px")
         .attr("width", "24px")
         .attr("height", "24px")
+        .attr("transform", d => {
+            if (d.child) {
+                return `rotate(${-(d.x - 90)})`
+            } else {
+                return (d.x >= 180 ? "rotate(180)" : null)
+            }
+        })
         .on('click', function (d) { return display(d); });
 
     nodes.append("text")
@@ -74,7 +79,6 @@ const draw = () => {
             }
         })
         .on('click', function (d) { return display(d); });
-    debugger
     svg.attr("viewBox", autoBox);
 };
 
