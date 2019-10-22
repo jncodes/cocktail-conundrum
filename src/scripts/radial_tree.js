@@ -1,12 +1,13 @@
 import display from "./information";
 
 function autoBox() {
+        debugger
         const { x, y, width, height } = this.getBBox();
         return [x, y, width, height];
     }
 
 const draw = () => {
-
+    debugger
     const width = 975;
     const height = 975;
     const radius = width / 2;
@@ -16,9 +17,10 @@ const draw = () => {
     const svg = d3.select('#app')
         .append('svg')
         .attr('width', width)
-        .attr('height', height)
-        .append('g')
-        .attr('transform', 'translate(' + radius + ', ' + radius + ')');
+        .attr('height', height);
+
+    // svg.append('g')
+    //     .attr('transform', 'translate(' + radius + ', ' + radius + ')');
 
     const dataStructure = d3.stratify()
         .id(function (d) { return d.child; })
@@ -72,9 +74,7 @@ const draw = () => {
             }
         })
         .on('click', function (d) { return display(d); });
-
-    // yield svg.nodes();
-
+    debugger
     svg.attr("viewBox", autoBox);
 };
 

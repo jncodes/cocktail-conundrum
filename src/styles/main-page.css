@@ -46,4 +46,10 @@ svg {
 
 li {
     list-style-type: none;
+    margin-bottom: 1em;
+}
+
+ul {
+    margin: 1em;
+    padding: 0;
 }

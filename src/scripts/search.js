@@ -36,7 +36,7 @@ const search = ingredient => {
                     });
                 });
             Promise.all(promise_array).then(() => draw());
-        });
+        }).catch(() => { }); // add error message
 };
 
 export default search;
