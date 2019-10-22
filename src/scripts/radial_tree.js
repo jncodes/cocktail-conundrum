@@ -7,8 +7,6 @@ function autoBox() {
 
 const draw = () => {
 
-    // const width = 975;
-    // const height = 975;
     const width = 975;
     const height = 975;
     const radius = width / 2;
