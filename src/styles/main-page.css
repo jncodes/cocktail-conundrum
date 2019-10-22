@@ -43,3 +43,7 @@ svg {
 
     overflow: scroll;
 }
+
+li {
+    list-style-type: none;
+}

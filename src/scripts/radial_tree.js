@@ -13,7 +13,7 @@ const draw = () => {
     const height = 975;
     const radius = width / 2;
 
-    d3.select('svg').remove()
+    d3.select('svg').remove();
 
     const svg = d3.select('#app')
         .append('svg')
@@ -72,7 +72,8 @@ const draw = () => {
             } else {
                 return (d.x >= 180 ? "rotate(180)" : null)
             }
-        });
+        })
+        .on('click', function (d) { return display(d); });
 
     // yield svg.nodes();
 
