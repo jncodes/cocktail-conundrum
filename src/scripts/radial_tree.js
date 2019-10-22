@@ -1,15 +1,14 @@
 import display from "./information";
 
-// const capitalize = string => {
-//     const words = string.split(' ');
-//     let cap_words = words.map(word => {
-//         return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-//     });
-//     return cap_words.join(' ');
-// };
+function autoBox() {
+        const { x, y, width, height } = this.getBBox();
+        return [x, y, width, height];
+    }
 
 const draw = () => {
 
+    // const width = 975;
+    // const height = 975;
     const width = 975;
     const height = 975;
     const radius = width / 2;
@@ -24,8 +23,6 @@ const draw = () => {
         .attr('transform', 'translate(' + radius + ', ' + radius + ')');
 
     const dataStructure = d3.stratify()
-        // .id(function (d) { return capitalize(d.child); })
-        // .parentId(function (d) { return capitalize(d.parent); })
         .id(function (d) { return d.child; })
         .parentId(function (d) { return d.parent; })
         (window.tree_data);
@@ -62,20 +59,8 @@ const draw = () => {
         .attr("width", "24px")
         .attr("height", "24px")
         .on('click', function (d) { return display(d); });
-    // debugger
-    // nodes.append("circle")
-    // .attr("r", 7)
-    // .style("fill", "#69b3a2")
-    // .attr("stroke", "black")
-    // .style("stroke-width", 2)
 
     nodes.append("text")
-        // .attr("dy", ".31em")
-        // .attr("x", function (d) { return d.x < 180 === !d.ingredient ? 6 : -6; })
-        // .style("text-anchor", function (d) { return d.x < 180 === !d.ingredient ? "start" : "end"; })
-        // .attr("transform", function (d) { return "rotate(" + (d.x < 180 ? d.x - 90 : d.x + 90) + ")"; })
-        // .text(function (d) { return d.id.substring(d.id.lastIndexOf(".") + 1); });
-
         .text(d => d.data.child)
         .classed("text", true)
         .attr("font-size", d => (10 + (3 * d.height)))
@@ -87,48 +72,11 @@ const draw = () => {
             } else {
                 return (d.x >= 180 ? "rotate(180)" : null)
             }
-        })
+        });
 
-    // .attr("dy", "0.31em")
-    // .attr("x", d => d.x < Math.PI === !d.ingredient ? 6 : -6)
-    // .attr("text-anchor", d => d.x < Math.PI === !d.ingredient ? "start" : "end")
-    // .attr("transform", d => d.x >= Math.PI ? "rotate(180)" : null)
-    // .text(d => d.data.ingredient)
-    // .filter(d => d.ingredient)
-    // .clone(true).lower()
-    // .attr("stroke", "white");
-    // const names = svg.append('g')
-    //     .selectAll("text")
-    //     .data(information.descendants())
-    //     .enter()
-    //     .append("text")
-    //     // .text(function(d) {return d.data.ingredient;})
-    //     // .attr('x', function(d){return d.x + 5;})
-    //     // .attr('y', function(d){return d.y + 5;})
-    //     .attr("dy", ".31em")
-    //     .attr("x", function (d) { return d.x < 180 === !d.ingredient ? 6 : -6; })
-    //     .style("text-anchor", function (d) { return d.x < 180 === !d.ingredient ? "start" : "end"; })
-    //     .attr("transform", function (d) { return "rotate(" + (d.x < 180 ? d.x - 90 : d.x + 90) + ")"; })
-    //     .text(function (d) { return d.id.substring(d.id.lastIndexOf(".") + 1); });
+    // yield svg.nodes();
 
-    // const treeStructure = d3.tree().size([500, 300]);
-    // const information = treeStructure(dataStructure);
-
-    // const autoBox = () => {
-    //     const { x, y, width, height } = this.getBBox();
-    //     return [x, y, width, height];
-    // }
-
-    // svg.attr("viewBox", autoBox);
-    
-    // const circles = svg.append('g')
-    //     .selectAll('circle')
-    //     .data(information.descendants());
-    // circles.enter()
-    //     .append('circle')
-    //     .attr('cx', function (d) { return d.x; })
-    //     .attr('cy', function (d) { return d.y; })
-    //     .attr('r', 5);
+    svg.attr("viewBox", autoBox);
 };
 
 export default draw;

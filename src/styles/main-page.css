@@ -30,7 +30,8 @@ svg {
 .search-box-container {
     /* background-color: blueviolet; */
 
-    height: 100px;
+    /* height: 100px; */
+    position: relative;
     width: 100%; /**/
 }
 
@@ -39,4 +40,6 @@ svg {
 
     height: 100%;
     width: 100%; /**/
+
+    overflow: scroll;
 }
