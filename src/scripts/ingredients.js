@@ -13,7 +13,8 @@ const ingredients = () => {
             })
             .catch(() => { });
     }
-    Promise.all(promise_array).then(() => document.getElementById('ingredient').disabled = false);
+    Promise.all(promise_array)
+        .then(() => document.getElementById('ingredient').disabled = false);
 }
 
 export default ingredients;

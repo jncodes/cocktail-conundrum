@@ -51,7 +51,9 @@ const draw = () => {
         })
 
     nodes.append('image')
-        .attr('href', function (d) { return d.data.image; })
+        .attr('href', function (d) { 
+            debugger
+            return d.data.image; })
         .attr("x", "-12px")
         .attr("y", "-12px")
         .attr("width", "24px")
@@ -79,6 +81,7 @@ const draw = () => {
             }
         })
         .on('click', function (d) { return display(d); });
+        
     svg.attr("viewBox", autoBox);
 };
 
