@@ -1,7 +1,7 @@
 # Cocktail Conundrum - A Bartending Guide
 An interactive tool to visualize the world's best known cocktails.  [Check it out here!](#)
 ### Background and Overview
-Cocktail Conundrum is a visualized bartending guide for the novice or professional bartender.  Displayed as a tree structure, users can browse the world's best known cocktails by name or ingredient (alcohol and mix-ins).  This is a tool that can be used to jog the memory or discover something new.
+Cocktail Conundrum is a visualized bartending guide for the novice or professional bartender.  Displayed as a radial tree structure, users can browse the world's best known cocktails by name or ingredient (alcohol and mix-ins).  This is a tool that can be used to jog the memory or discover something new.
 ### Functionality & MVP
 In Cocktail Conundrom, users will be able to:
 * Select to search by name or ingredient

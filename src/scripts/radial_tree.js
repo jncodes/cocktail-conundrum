@@ -52,7 +52,7 @@ const draw = () => {
 
     nodes.append('image')
         .attr('href', function (d) { 
-            debugger
+            // debugger
             return d.data.image; })
         .attr("x", "-12px")
         .attr("y", "-12px")

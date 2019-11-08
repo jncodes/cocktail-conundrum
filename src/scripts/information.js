@@ -2,13 +2,15 @@ const display = (d) => {
     const key = d.data.child.toUpperCase();
     const ingredient = window.state.ingredients[key];
     const cocktail = window.state.drinks[key];
-    let ingredient_details;
-    let cocktail_details;
+    // let ingredient_details;
+    let ingredient_details = [];
+    let cocktail_details = [];
     if (ingredient) {
-        ingredient_details = [
-            ingredient.strIngredient,
-            ingredient.strDescription
-        ];
+        if (ingredient.strIngredient !== null) ingredient_details.push('Ingredient', ingredient.strIngredient);
+        if (ingredient.strDescription !== null) ingredient_details.push('Description', ingredient.strDescription);
+        if (ingredient.strType !== null) ingredient_details.push('Type', ingredient.strType);
+        if (ingredient.strAlcohol !== null) ingredient_details.push('Alcohol', ingredient.strAlcohol);
+        if (ingredient.strABV !== null) ingredient_details.push('ABV', ingredient.strABV);
     }
     if (cocktail) {
         cocktail_details = [
